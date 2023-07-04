@@ -48,6 +48,8 @@ public class ServiceProviderApiService {
 	@Value("${coreless.api.serviceProvider.baseUrl}")
     private String spBaseUrl;
 	
+	@Value("${coreless.api.cert.pass}")
+    private String keyPhrase;
 	
 	@Autowired
 	CloseableHttpClient httpClientIntance;
@@ -103,9 +105,8 @@ public class ServiceProviderApiService {
 	public Map<String, Object> getAccountProductDetail(InternalBrokeredProductRequest internalBrokeredProductRequest) throws URISyntaxException, IOException, NoSuchAlgorithmException, KeyStoreException, CertificateException, KeyManagementException {
 		Map<String, Object> mapFromString = null;
 		try {
-			String keyPassphrase = "changeit";
 			KeyStore keyStore = KeyStore.getInstance("PKCS12");
-			keyStore.load(this.getClass().getClassLoader().getResourceAsStream("bianClient.jks"), keyPassphrase.toCharArray());
+			keyStore.load(this.getClass().getClassLoader().getResourceAsStream("bianClient.jks"), keyPhrase.toCharArray());
 
 			SSLContext sslContext;
 			CloseableHttpClient httpclient = null;
@@ -174,9 +175,8 @@ public class ServiceProviderApiService {
 	public Map<String, Object> getAccountDetail(InternalBrokeredProductRequest internalBrokeredProductRequest) throws URISyntaxException, IOException, NoSuchAlgorithmException, KeyStoreException, CertificateException, KeyManagementException {
 		Map<String, Object> mapFromString = null;
 		try {
-			String keyPassphrase = "changeit";
 			KeyStore keyStore = KeyStore.getInstance("PKCS12");
-			keyStore.load(this.getClass().getClassLoader().getResourceAsStream("bianClient.jks"), keyPassphrase.toCharArray());
+			keyStore.load(this.getClass().getClassLoader().getResourceAsStream("bianClient.jks"), keyPhrase.toCharArray());
 
 			SSLContext sslContext;
 			CloseableHttpClient httpclient = null;
@@ -245,9 +245,8 @@ public class ServiceProviderApiService {
 	public Map<String, Object> getAccountBalances(InternalBrokeredProductRequest internalBrokeredProductRequest) throws URISyntaxException, IOException, NoSuchAlgorithmException, KeyStoreException, CertificateException, KeyManagementException {
 		Map<String, Object> mapFromString = null;
 		try {
-			String keyPassphrase = "changeit";
 			KeyStore keyStore = KeyStore.getInstance("PKCS12");
-			keyStore.load(this.getClass().getClassLoader().getResourceAsStream("bianClient.jks"), keyPassphrase.toCharArray());
+			keyStore.load(this.getClass().getClassLoader().getResourceAsStream("bianClient.jks"), keyPhrase.toCharArray());
 
 			SSLContext sslContext;
 			CloseableHttpClient httpclient = null;
@@ -317,9 +316,8 @@ public class ServiceProviderApiService {
 	public Map<String, Object> getAccountParty(InternalBrokeredProductRequest internalBrokeredProductRequest) throws URISyntaxException, IOException, NoSuchAlgorithmException, KeyStoreException, CertificateException, KeyManagementException {
 		Map<String, Object> mapFromString = null;
 		try {
-			String keyPassphrase = "changeit";
 			KeyStore keyStore = KeyStore.getInstance("PKCS12");
-			keyStore.load(this.getClass().getClassLoader().getResourceAsStream("bianClient.jks"), keyPassphrase.toCharArray());
+			keyStore.load(this.getClass().getClassLoader().getResourceAsStream("bianClient.jks"), keyPhrase.toCharArray());
 
 			SSLContext sslContext;
 			CloseableHttpClient httpclient = null;
