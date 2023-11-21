@@ -16,7 +16,7 @@
 	<properties>
 		<java.version>11</java.version>
 		<apache.httpclient.version>4.5.13</apache.httpclient.version>
-		<spring-kafka.version>3.0.8</spring-kafka.version>
+		<spring-kafka.version>3.1.0</spring-kafka.version>
 	</properties>
 	<dependencies>
 		<dependency>
